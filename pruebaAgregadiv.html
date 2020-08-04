@@ -1,0 +1,20 @@
+<html>
+<head>
+   <title>función jquery</title>
+   <script src="./jquery-1.6.2.min.js" type="text/javascript"></script>
+<script>
+
+function agregaDiv(){
+   var nuevosElementos = $("<div>Estos elementos ..</b>.<h1>Título...</h1></div>");
+   nuevosElementos.appendTo("body");
+}
+
+
+$(document).ready( agregaDiv());
+
+</script>
+</head>
+<body>
+<p>Esto es el cuerpo de la página, que tiene poca cosa...</p>
+</body>
+</html>

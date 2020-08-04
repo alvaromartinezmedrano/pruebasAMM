@@ -1,0 +1,27 @@
+<html> 
+  <head>   
+  <title>función jquery crear documentos al vuelo</title>   
+  
+  <script src="./jquery-1.6.2.min.js" type="text/javascript"></script>
+  
+ <script> 
+  $(document).ready(function(){   
+      var nuevosElementos = $("<div>Estos elementos son creados al vuelo</b>.<h1>Título...</h1></div>");  
+      nuevosElementos.appendTo("body"); 
+	  
+	  //esto pinta el documento de azul
+	  var documento = $(document.body); 
+	  documento.css("background-color", "blue"); 
+    }
+  ); 
+  
+ </script> 
+ </head> 
+ 
+ <body> 
+    <p>Esto es el cuerpo de la página, que tiene poca cosa...</p> 
+	
+	
+	
+ </body> 
+</html> 

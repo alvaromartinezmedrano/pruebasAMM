@@ -1,0 +1,187 @@
+Notas jquery
+
+https://desarrolloweb.com/manuales/manual-jquery.html
+
+Api jquery
+http://api.jquery.com/
+
+
+descarga jquery
+Dan dos posibilidades para descargar, una que le llaman PRODUCTION, que es la adecuada para páginas web en producción, puesto que está minimizada 
+y ocupa menos espacio, con lo que la carga de nuestro sitio será más rápida. La otra posibilidad es descargar la versión que llaman DEVELPOMENT, 
+que está con el código sin comprimir, con lo que ocupa más espacio, 
+
+
+
+ jQuery incluye una manera de hacer acciones justo cuando ya está lista la página, aunque haya elementos que no hayan sido cargados del todo. 
+ Esto se hace con la siguiente sentencia. 
+
+$(document).ready(function(){
+//código a ejecutar cuando el DOM está listo para recibir instrucciones.
+});
+
+
+$(document) obtiene una referencia al documento (la página web) que se está cargando. 
+
+
+
+
+-----------------------------------------------------------------------------------------------------
+ Función jQuery o función $() 
+-----------------------------------------------------------------------------------------------------
+- El funcionamiento del Core de jQuery se basa en esta función.
+ 
+- La función jQuery sirve para hacer varias cosas, según los parámetros que le pasemos.
+- El uso más simple es seleccionar elementos o grupos de elementos
+
+Función jQuery enviando un selector y un contexto. 
+Las posibilidades de selección con jQuery son muy grandes, ver tema de "Selectores"
+
+
+ejemplos:
+var elem1 = $("#elem1");   localia un elemento por id y regresa la referencia a dicho objeto, el # indica q es un id,
+
+$("a")      localiza todos los elementos de un tipo dado, en este ejemplo son anclas  <a> 
+
+        
+var divs = $("div"); 
+divs.css("font-size", "32pt"); 
+Aquí seleccionamos todas las etiquetas DIV de la página, y les colocamos un tamaño de letra de 32pt.                           
+
+
+crear elementos al vuelo
+<script> $(document).ready(function(){   
+ var nuevosElementos = $( "<div>Estos elementos ..</b>.<h1>Título...</h1></div>");   
+      
+      // se agregan
+      nuevosElementos.appendTo("body");
+    }
+  ); 
+</script>  
+
+
+-----------------------------------------------------------------------------------------------------
+Eventos
+----------------------------------------------------------------------------------------------------
+
+Cuando hacemos ciertas acciones complejas con Javascript, tenemos que estar seguros que la página haya terminado de cargar y esté lista para 
+recibir comandos Javascript que utilicen la estructura del documento con el objetivo de cambiar cosas, como crear elementos, quitarlos, 
+cambiar sus propiedades, etc. Si no esperamos a que la página esté lista para recibir instrucciones corremos un alto riesgo de obtener 
+errores de Javascript en la ejecución.
+
+ready()
+      el método ready() define un evento, que se desata al quedar listo el documento para realizar acciones sobre el DOM de la página. 
+
+$(document).ready(function(){
+   //código a ejecutar cuando el DOM está listo para recibir instrucciones.
+});
+
+
+
+on click
+ $("a").click(  function(evento){ .... }
+
+on mouseover 
+ $("a").mouseover(function(event){....}
+
+
+on mouseout 
+ $("a").mouseout(function(event){....}
+
+
+mouseenter 
+ $("#capa").mouseenter(function(evento){
+		$("#mensaje").css("display", "block");
+	});
+
+mouseleave
+	$("#capa").mouseleave(function(evento){
+		$("#mensaje").css("display", "none");
+	});
+	
+	
+	
+----------------------------------------------------------------------------------------------------
+Metodos
+----------------------------------------------------------------------------------------------------
+
+ver el valor de un atributo
+$("#mayoria_edad").attr("checked")){ ..... }
+
+
+añadir y quitar clases CSS sobre elementos:  addClass() y removeClass()
+    
+        $("#capa").addClass("clasecss");
+        $("#capa").removeClass("clasecss");
+
+    
+Esconder y Mostrar un objeto    
+         $("#formulariomayores").css("display", "block");
+
+          $("#formulariomayores").css("display", "none");
+
+
+Esconder y mostrar despacio
+  $("#capaefectos").hide("slow");
+   $("#capaefectos").show(3000);
+
+
+desvanecer un objeto a cierta velocidad, dada en milisegundos
+$("#micapa").fadeOut(2000);
+
+ se indican las coordenadas donde se presentará el objeto 
+$("#micapa").css({top: 300, left:200});
+
+contrario a desvanecer y la velocidad en q se aparecerá
+$("#micapa").fadeIn(2000);
+
+
+Agregar elementos a un documento. 1 definirlos  2 agregarlos
+ var nuevosElementos = $( "<div>Estos elementos ..</b>.<h1>Título...</h1></div>");   
+ nuevosElementos.appendTo("body"); 
+
+----------------------------------------------------------------------------------------------------
+Estilos
+----------------------------------------------------------------------------------------------------
+
+coloca el objeto en la posicion 300,200
+$("#micapa").css({top: 300, left:200});
+
+presenta un objeto
+$("#mensaje").css("display", "block");
+
+esconde un objeto
+$("#formulariomayores").css("display", "none");
+
+
+pinta un objeto
+documento.css("background-color", "blue"); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
